@@ -15,7 +15,7 @@ async def close_db_connection(self):
 async def home(req, resp):
 
     await Tortoise.init(
-        db_url="sqlite://mediple.db", modules={"models": ["mediple.modelss"]}
+        db_url="sqlite://mediple.db", modules={"models": ["mediple.models"]}
     )
 
     await User.create(name="Test User")
@@ -24,4 +24,4 @@ async def home(req, resp):
     resp.text = f"Hello, {user.name}"
 
 
-api.run()
+api.run(address='0.0.0.0', port=6765, debug=True)
