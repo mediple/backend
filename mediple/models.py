@@ -11,6 +11,13 @@ class User(Model):
     password = fields.TextField()
 
 
+class UserData(Model):
+    user = fields.ForeignKeyField('models.User')
+    age = fields.IntField()
+    height = fields.IntField()
+    weight = fields.IntField()
+
+
 class Medicine(Model):
     id = fields.IntField(pk=True)
     admin_method = fields.CharField(max_length=5)
