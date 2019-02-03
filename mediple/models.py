@@ -5,6 +5,7 @@ from tortoise import fields
 class User(Model):
     id = fields.IntField(pk=True)
     name = fields.CharField(max_length=20)
+    profile_image = fields.TextField()
     tel = fields.TextField()
     email = fields.TextField()
     username = fields.CharField(max_length=10, unique=True)
