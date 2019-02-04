@@ -4,6 +4,11 @@
 
 responder로 구현한 RESTapi 서버입니다.
 
+## 중요 모듈
+
+responder==1.2.0<br>
+tortoise-orm==0.11.2
+
 ## 본 프로젝트 사용법
 
 1. git clone "https://github.com/mediple/backend.git"<br><br>
