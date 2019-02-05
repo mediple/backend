@@ -21,16 +21,20 @@ async def home(req, res):
     #     db_url=config_secret['mediple']['database']['url'], modules={"models": ["mediple.models"]}
     # )
 
-    @api.background.task
-    def progress_data(data):
-        print(data)
-        time.sleep(3)
+    if req.method == 'post':
+        # print(await req.params)
 
-    data = await req.media()
+        @api.background.task
+        def progress_data(data):
+            print(json.dumps(data))
 
-    progress_data(data)
+        data = await req.media()
 
-    res.media = {'success': True}
+        progress_data(data)
+
+        res.media = {'success': True}
+    if req.method == 'get':
+        res.media = {'error': 'Post로 접근'}
 
 
 @api.route("/api/login")
