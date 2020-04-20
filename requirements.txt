@@ -38,7 +38,7 @@ rfc3986==1.2.0
 Rx==1.6.1
 six==1.12.0
 starlette==0.10.0
-tortoise-orm==0.11.2
+tortoise-orm==0.15.23
 urllib3==1.24.1
 uvicorn==0.4.1
 uvloop==0.12.0
